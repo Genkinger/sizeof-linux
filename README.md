@@ -8,10 +8,17 @@ $ make
 ## Usage
 
 ```
-$ ./sizeof [-rtv] [-p path] [-s size_format] [-h threshhold]
+$ ./sizeof [-rtv] [-p path] [-s size_format] [-h threshold]
 ```
-size_format : {(b)ytes,(k)ilobytes,(m)egabytes,(g)igabytes}
-threshold : if in verbose
+|switch|argument|description|
+|:----:|:------:|:---------:|
+|**-r**|no|operate recursively|
+|**-v**|no|verbose output|
+|**-t**|no|time the operation|
+|**-s**|*size_format*|values in *b* -> bytes, *k* -> kilobytes, *m* -> megabytes, *g* -> gigabytes|
+|**-p**|*path*|set the search path|
+|**-n**|no|colorless output (for piping etc.)|
+|**-h**|*threshold*|search for files >= *threshold*|
 
 ## Known Issues/Bugs
 If the tool is not run as root it occasionally produces **segfaults** when trying to read files it doesn't have permission to.
