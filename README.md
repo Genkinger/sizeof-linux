@@ -37,8 +37,8 @@ $ ./sizeof -t -p ./ -s k -h 20
 [TOTAL ELAPSED TIME] : 0s
 ```
 ##### Note
-> *threshold* is a float. It is given in the specified size_format.
-> The output file size is a float. It is given in the specified size_format.
+>  1. *threshold* is a float. It is given in the specified size_format.
+>  2. The output file size is a float. It is given in the specified size_format.
 
 ## Known Issues/Bugs
 If the tool is not run as root it occasionally produces **segfaults** when trying to read files it doesn't have permission to.
