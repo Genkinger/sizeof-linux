@@ -185,7 +185,7 @@ int main(int argc, char** argv){
 
     std::vector<std::string> ret;
 
-    auto t_search1 = std::chrono::high_resolution_clock::now(); //TIMING
+    auto t_search1 = std::chrono::high_resolution_clock::now(); //TIMING START
 
     if(flag_rec == 1){
         ret = getFilesFromDir(p_value);
@@ -193,12 +193,12 @@ int main(int argc, char** argv){
         ret = getFilesFromCurrDir(p_value);
     }
 
-    auto t_search2 = std::chrono::high_resolution_clock::now(); //TIMING
+    auto t_search2 = std::chrono::high_resolution_clock::now(); //TIMING STOP
 
     unsigned int total;
 
 
-auto t_print1 = std::chrono::high_resolution_clock::now(); //TIMING
+auto t_print1 = std::chrono::high_resolution_clock::now(); //TIMING START
 
     for(int i=0; i < ret.size(); i++){
         unsigned long sz = getFileSize(ret.at(i));
@@ -249,7 +249,7 @@ else{
         total += sz;
     }
 
-auto t_print2 = std::chrono::high_resolution_clock::now();
+auto t_print2 = std::chrono::high_resolution_clock::now(); //TIMING STOP
 
     if(flag_verbose == 1){
         std::cout << "\n\n--------------FINISHED----------------\n" << std::endl;
