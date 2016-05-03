@@ -15,10 +15,30 @@ $ ./sizeof [-rtv] [-p path] [-s size_format] [-h threshold]
 |**-r**|no|operate recursively|
 |**-v**|no|verbose output|
 |**-t**|no|time the operation|
-|**-s**|*size_format*|values in *b* -> bytes, *k* -> kilobytes, *m* -> megabytes, *g* -> gigabytes|
+|**-s**|*size_format*|values in *b* -> bytes, *k* -> kilobytes, *m* -> megabytes, *g* -> gigabytes (default: *k*)|
 |**-p**|*path*|set the search path|
 |**-n**|no|colorless output (for piping etc.)|
 |**-h**|*threshold*|search for files >= *threshold*|
+
+### Example
+```
+$ ./sizeof -t -p ./ -s k -h 20  
+```
+###### output:
+```
+<./>
+  |-- sizeof  [62.071999]
+  |-- LICENSE  [35.140999]
+
+--------------------------------------
+
+[SEARCH TIME] : 0s
+[PRINT TIME] : 0s
+[TOTAL ELAPSED TIME] : 0s
+```
+##### Note
+> *threshold* is a float. It is given in the specified size_format.
+> The output file size is a float. It is given in the specified size_format.
 
 ## Known Issues/Bugs
 If the tool is not run as root it occasionally produces **segfaults** when trying to read files it doesn't have permission to.
